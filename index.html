@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARDI</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/nullstyle.css" />
+    <style>
+      @font-face {
+        font-family: "Poppins";
+        src: url("../fonts/Poppins-Medium.ttf");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        background: #17191a;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        width: 100%;
+        position: relative;
+      }
+      header {
+        z-index: 100;
+        user-select: none;
+        position: sticky;
+        height: 96px;
+        background: none;
+        display: flex;
+        justify-content: space-between;
+        top: 0;
+        padding: 24px 10vw;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      section {
+        background: #0e0f10;
+        display: flex;
+        flex-wrap: wrap;
+        padding: calc(8vh + 11vw) 10vw calc(4vh + 6vw) 10vw;
+        background: url("https://placehold.co/1024x800/black/gray");
+      }
+      header > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        width: 48px;
+        margin-right: 15px;
+        filter: invert(100%);
+      }
+      .logo-text {
+        font-size: 40px;
+        font-weight: 300;
+      }
+
+      .header-block {
+        width: 100%;
+        position: static;
+        top: 0;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .button {
+        background: #228777;
+        border-radius: 5px;
+        text-align: center;
+        padding: 12px 24px;
+        font-size: 20px;
+        font-family: serif;
+        cursor: pointer;
+      }
+
+      @media (min-width: 764px) {
+        .button {
+          width: calc(5vw + 5vh + 5%);
+        }
+      }
+
+      @media (max-width: 764px) {
+        .header-block {
+          padding: calc(15vh + 11vw) 10vw calc(4vh + 6vw) 10vw;
+        }
+      }
+
+      h2 {
+        font-size: calc(3vh + 2vw);
+      }
+      section:nth-child(3) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+      }
+      section:nth-child(3) > div {
+        gap: 20px;
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+      }
+      section:nth-child(3) > div > h2 {
+        font-size: 45px;
+        font-weight: 300;
+      }
+      section:nth-child(3) > div > p {
+        font-size: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        section:nth-child(3) > div {
+          width: 100%;
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img class="logo invert" src="./assets/ARDI_logo.png" alt="" />
+        <h2 class="logo-text">ARDI</h2>
+      </div>
+      <div>Language</div>
+    </header>
+
+    <section class="header-block">
+      <h2 style="width: 60vw">Преобразите ваше жилое пространство</h2>
+      <p style="font-size: calc(1.5vh + 1vw); width: calc(10vh + 50vw)">
+        Профессиональные услуги по укладке полов. Безграничные варианты для
+        любой комнаты.
+      </p>
+      <a class="button">Начать</a>
+    </section>
+    <section>
+      <div>
+        <h2>Преобразите ваше пространство с ARDI в Кёльне</h2>
+        <p>
+          Улучшите ваш дом или офис с помощью высококачественных решений от
+          ARDI. Мы находимся в Бонне, и предлагаем профессиональную установку и
+          широкий ассортимент материалов. Доверьтесь ARDI для всех ваших
+          потребностей в напольных покрытиях.
+        </p>
+      </div>
+      <div>
+        <img src="https://placehold.co/600x600" alt="1" />
+      </div>
+    </section>
+
+    <!-- <section class="container column gray">
+      <div>Наши услуги</div>
+      <div class="container row">
+        <div class="container column">
+          <img src="" alt="1" />
+          <p>Решения для жилых помещений</p>
+          <p>
+            Мы подбираем напольные покрытия для вашего дома. От деревянных полов
+            до ковров – у нас есть варианты, которые подойдут к вашему стилю.
+          </p>
+        </div>
+        <div class="container column">
+          <img src="" alt="3" />
+          <p>Установка полов для коммерческих помещений</p>
+          <p>
+            Мы устанавливаем долговечные и стильные полы для бизнеса. Улучшите
+            ваше пространство с нашими качественными материалами.
+          </p>
+        </div>
+        <div class="container column">
+          <img src="" alt="3" />
+          <p>Ремонт напольных покрытий</p>
+          <p>
+            Мы предлагаем ремонт всех типов напольных покрытий. Наша команда
+            гарантирует, что ваш пол будет выглядеть и функционировать как
+            новый.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container column gray">
+      <div>О нас</div>
+      <div>
+        Мы предлагаем широкий спектр услуг, включая установку, обслуживание и
+        ремонт. С многолетним опытом мы обеспечиваем выполнение каждой работы на
+        высшем уровне.
+      </div>
+      <div class="container row">
+        <img src="" alt="1" /><img src="" alt="2" /><img src="" alt="3" /><img
+          src=""
+          alt="4"
+        /><img src="" alt="5" /><img src="" alt="6" />
+      </div>
+    </section>
+
+    <section class="container row gray">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </section>
+    <section class="container column gray">
+      <div>Location Cologne, NW</div>
+    </section>
+
+    <section class="container row gray">
+      <div>
+        Contact Our Team <br />
+        Fill out the form to get in touch with us. We are here to help with your
+        flooring needs.
+      </div>
+      <form action="" class="container column">
+        <div class="container row">
+          <div>Name</div>
+          <div>Email</div>
+          <div>Message</div>
+        </div>
+        <div class="container row">
+          <div>
+            This site is protected by reCAPTCHA and the Google Privacy Policy
+            and Terms of Service apply.
+          </div>
+          <button>Submit</button>
+        </div>
+      </form>
+    </section>
+    <section class="container column gray">
+      <div>Преобразите ваши полы сегодня</div>
+      <div>
+        Улучшите ваше пространство с нашими экспертными услугами по укладке
+        полов в Кёльне.
+      </div>
+      <button>Связаться с нами</button>
+    </section>
+
+    <footer class="container row black">
+      <div class="container row">
+        <img class="logo invert" src="./assets/ARDI_logo.png" alt="" />
+        <h2 class="logo-text">ARDI</h2>
+      </div>
+      <div></div>
+      <div>Made with Durable</div>
+    </footer> -->
+  </body>
+</html>
