@@ -14,7 +14,7 @@
         font-style: normal;
       }
       body {
-        background: #17191a;
+        background: black;
         font-family: "Poppins", sans-serif;
         color: white;
         width: 100%;
@@ -98,6 +98,7 @@
         font-size: calc(3vh + 2vw);
       }
       section:nth-child(3) {
+        transform: translateY(-50px);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -122,6 +123,10 @@
           width: 100%;
           display: flex;
         }
+      }
+      section:nth-child(5) {
+        /* color: red */
+        transform: translateY(-10px);
       }
     </style>
   </head>
@@ -156,11 +161,17 @@
         <img src="https://placehold.co/600x600" alt="1" />
       </div>
     </section>
-
-    <!-- <section class="container column gray">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="red"
+        fill-opacity="1"
+        d="M0,256L480,128L960,256L1440,128L1440,320L960,320L480,320L0,320Z"
+      ></path>
+    </svg>
+    <section style="background-color: red; background-image: none">
       <div>Наши услуги</div>
-      <div class="container row">
-        <div class="container column">
+      <div>
+        <div>
           <img src="" alt="1" />
           <p>Решения для жилых помещений</p>
           <p>
@@ -168,7 +179,7 @@
             до ковров – у нас есть варианты, которые подойдут к вашему стилю.
           </p>
         </div>
-        <div class="container column">
+        <div>
           <img src="" alt="3" />
           <p>Установка полов для коммерческих помещений</p>
           <p>
@@ -176,7 +187,7 @@
             ваше пространство с нашими качественными материалами.
           </p>
         </div>
-        <div class="container column">
+        <div>
           <img src="" alt="3" />
           <p>Ремонт напольных покрытий</p>
           <p>
@@ -188,7 +199,7 @@
       </div>
     </section>
 
-    <section class="container column gray">
+    <!-- <section class="container column gray">
       <div>О нас</div>
       <div>
         Мы предлагаем широкий спектр услуг, включая установку, обслуживание и
