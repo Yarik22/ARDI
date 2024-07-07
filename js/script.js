@@ -204,3 +204,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }, 7000);
 });
+
+const header = document.getElementById("header");
+
+function handleScroll() {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolling");
+  } else {
+    header.classList.remove("scrolling");
+  }
+}
+
+window.addEventListener("scroll", handleScroll);

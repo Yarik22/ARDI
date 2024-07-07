@@ -22,6 +22,7 @@
         position: relative;
       }
       header {
+        transition: background-color 0.3s ease;
         z-index: 10;
         user-select: none;
         position: sticky;
@@ -46,6 +47,7 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        height: 18vh;
       }
       section {
         background: #0e0f10;
@@ -280,11 +282,6 @@
         }
       }
 
-      @media (max-width: 764px) {
-        .carousel-item {
-          width: 200px;
-        }
-      }
       section:nth-child(12) {
         display: flex;
         flex-wrap: nowrap;
@@ -320,7 +317,7 @@
         z-index: 2;
       }
       .map-iframe {
-        width: 99vw;
+        width: calc(100vw - 15px);
         border: none;
         display: block;
         position: absolute;
@@ -344,6 +341,21 @@
         padding: 18px;
         gap: 5px;
       }
+      @media (max-width: 768px) {
+        .carousel-item {
+          width: 200px;
+        }
+        .map-iframe {
+          width: 100vw;
+        }
+        .map-badge {
+          width: 400px;
+          height: 100px;
+          bottom: 17%;
+          right: 50%;
+          transform: translateX(50%);
+        }
+      }
       .map-badge > h2 {
         font-size: 26px;
         font-family: "Poppins";
@@ -355,31 +367,95 @@
         font-family: "serif";
         letter-spacing: 2px;
       }
-
       .contact-container {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        gap: 50px;
       }
-      .contact-info > h2{
-  font-size: 32px;
-  font-family: "Poppins";
-}
-.contact-info > p{
-  font-size: 18px;
-  font-family: "serif";
-}
-.contact-form {
-}
-.contact-privacy {
-}
+      .contact-info > h2 {
+        font-size: 32px;
+        font-family: "Poppins", sans-serif;
+      }
+      .contact-info > p {
+        font-size: 18px;
+        font-family: serif;
+        margin-bottom: 10px;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 800px;
+      }
+      .contact-inputs {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+      }
+      .contact-inputs label {
+        font-family: serif;
+      }
+      label {
+        font-family: serif;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        background-color: #1a1c1d;
+        width: 100%;
+        padding: 10px;
+        font-family: serif;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      .contact-privacy {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 12px;
+        font-family: serif;
+      }
+      a {
+        color: white;
+      }
+      a:visited {
+        color: none;
+      }
+      a:focus {
+        color: none;
+      }
 
+      @media (max-width: 768px) {
+        .contact-container {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .contact-form {
+          max-width: none;
+        }
+        .contact-inputs {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+      .scrolling {
+        background-color: #17191a;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
     </style>
   </head>
   <body>
-    <header>
+    <header id="header">
       <div>
         <img class="logo invert" src="./assets/ARDI_logo.png" alt="" />
         <h2 class="logo-text">ARDI</h2>
@@ -608,25 +684,34 @@
       ></iframe>
     </section>
     <section class="contact-container">
-      <div class="hoist contact-info">
-        <h2> Contact Our Team </h2>
-       <br />
-       <p>        Fill out the form to get in touch with us. We are here to help with your
-        flooring needs.</p>
-
+      <div class="contact-info hoist">
+        <h2>Contact Our Team</h2>
+        <p>
+          Fill out the form to get in touch with us. We are here to help with
+          your flooring needs.
+        </p>
       </div>
-      <form action="" class="hoist">
-        <div class="contact-form">
-          <input>Name</input>
-          <input>Email</input>
-          <input>Message</input>
+      <form action="" class="contact-form hoist">
+        <div class="contact-inputs">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
         </div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
         <div class="contact-privacy">
           <p>
             This site is protected by reCAPTCHA and the Google Privacy Policy
-            and Terms of Service apply.
+            and
+            <a
+              href="https://policies.google.com/terms"
+              style="text-decoration: none"
+              ><b>Terms of Service</b></a
+            >
+            apply.
           </p>
-          <a class="button">Submit</a>
+          <a type="submit" class="button">Submit</a>
         </div>
       </form>
     </section>
