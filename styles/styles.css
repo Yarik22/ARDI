@@ -445,6 +445,18 @@ section:nth-child(12) > a {
     transform: translateX(50%);
   }
 }
+@media (max-width: 425px) {
+  .map-svg {
+    transform: rotate(180deg) translateY(20px);
+  }
+  .map-badge {
+    width: 250px;
+    height: 100px;
+    bottom: 10%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
 .map-badge > h2 {
   font-size: 26px;
   font-family: "Poppins";
