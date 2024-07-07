@@ -1,0 +1,98 @@
+.hoist {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hoist.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.button {
+  background: #228777;
+  border-radius: 5px;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 20px;
+  font-family: serif;
+  cursor: pointer;
+  transition: 0.25s opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.button:hover {
+  background: #1a7465;
+  transition: 0.25s;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 77%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.cards {
+  user-select: none;
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-card {
+  flex: 0 0 100%;
+  text-align: center;
+}
+.carousel-card p {
+  margin-top: 15px;
+  text-align: start;
+  line-height: 38px;
+  font-size: calc(1vw + 1.25vh + 5px);
+  font-family: "Poppins";
+}
+
+.carousel-card img {
+  border-radius: 50%;
+  width: 80px;
+}
+.prev-btn,
+.next-btn {
+  background: none;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 40px;
+  z-index: 1000;
+}
+@media (max-width: 500px) {
+  .prev-btn {
+    padding: 0px;
+    font-size: 18px;
+  }
+  .next-btn {
+    padding: 0px;
+    font-size: 18px;
+  }
+  .carousel-card p {
+    font-size: 18px;
+  }
+}
+.prev-btn:hover,
+.next-btn:hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #202324;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #454a4d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #51575a;
+}

@@ -9,12 +9,13 @@
     <style>
       @font-face {
         font-family: "Poppins";
-        src: url("../fonts/Poppins-Medium.ttf");
+        src: url("/fonts/OpenSans-Regular.ttf");
         font-weight: normal;
         font-style: normal;
       }
       body {
-        background: black;
+        z-index: 1;
+        background: #0e0f10;
         font-family: "Poppins", sans-serif;
         color: white;
         width: 100%;
@@ -51,7 +52,7 @@
         display: flex;
         flex-wrap: wrap;
         padding: calc(4vh + 5vw) 12vw calc(4vh + 5vw) 10vw;
-        background: url("https://placehold.co/1024x800/black/gray");
+        background-color: #17191a;
       }
       header > div,
       footer > div {
@@ -85,21 +86,6 @@
         background-size: cover;
       }
 
-      .button {
-        background: #228777;
-        border-radius: 5px;
-        text-align: center;
-        padding: 12px 24px;
-        font-size: 20px;
-        font-family: serif;
-        cursor: pointer;
-        transition: 0.25s;
-      }
-      .button:hover {
-        background: #1a7465;
-        transition: 0.25s;
-      }
-
       @media (min-width: 764px) {
         .button {
           width: calc(5vw + 5vh + 5%);
@@ -116,7 +102,7 @@
         font-size: calc(3vh + 2vw);
       }
       section:nth-child(3) {
-        /* transform: translateY(-50px); */
+        height: 600px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -139,7 +125,22 @@
       @media (max-width: 1200px) {
         section:nth-child(3) > div {
           width: 100%;
+          align-items: center;
           display: flex;
+        }
+        section:nth-child(3) > div > img {
+          width: 80%;
+        }
+        section:nth-child(3) {
+          height: 1000px;
+        }
+        svg {
+          transform: translateY(20px);
+        }
+      }
+      @media (min-width: 1200px) {
+        .border {
+          transform: translateY(100px);
         }
       }
       .services {
@@ -170,9 +171,13 @@
         margin: 16px 0px;
         text-align: start;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 764px) {
         .service {
           flex: 1 1 100%;
+        }
+        .carousel-item img {
+          max-width: 300px;
+          transform: translateX(57.5%);
         }
       }
       section:nth-child(6) > p {
@@ -204,6 +209,8 @@
       }
 
       .carousel {
+        opacity: 0;
+        transition: opacity 0.2s;
         display: none;
         justify-content: center;
         align-items: center;
@@ -221,7 +228,6 @@
       .carousel-inner {
         display: flex;
         transition: transform 0.5s ease;
-        width: 300%;
       }
 
       .carousel-item {
@@ -229,7 +235,7 @@
         user-select: none;
         min-width: 33.3333%;
         box-sizing: border-box;
-        transition: 0.25s;
+        transition: 0.5s;
       }
 
       .carousel-item img {
@@ -274,33 +280,102 @@
         }
       }
 
+      @media (max-width: 764px) {
+        .carousel-item {
+          width: 200px;
+        }
+      }
+      section:nth-child(12) {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+      }
+      section:nth-child(12) > h2 {
+        font-family: "Poppins";
+        font-size: 34px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      section:nth-child(12) > p {
+        font-family: "serif";
+        font-size: 18px;
+        text-align: center;
+      }
+      section:nth-child(12) > a {
+        width: calc(50% - 30vw + 170px);
+      }
       .map-section {
         position: relative;
-        width: 100%;
-        height: 500px;
-        overflow: hidden;
+        height: 600px;
       }
-      #map {
-        width: 100%;
-        height: 100%;
-      }
-      .curve {
+      .map-svg {
+        transform: rotate(180deg) translateY(40px);
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: auto;
-        z-index: 10;
+        z-index: 2;
       }
-      .location-info {
+      .map-iframe {
+        width: 99vw;
+        border: none;
+        display: block;
         position: absolute;
-        bottom: 20px;
-        right: 20px;
-        background: rgba(0, 0, 0, 0.7);
-        padding: 10px 20px;
-        border-radius: 10px;
-        z-index: 20;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
       }
+      .map-badge {
+        border-radius: 30px;
+        width: 500px;
+        height: 125px;
+        background: #232627;
+        z-index: 3;
+        position: absolute;
+        bottom: 25%;
+        right: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        padding: 18px;
+        gap: 5px;
+      }
+      .map-badge > h2 {
+        font-size: 26px;
+        font-family: "Poppins";
+        letter-spacing: 2px;
+      }
+
+      .map-badge > p {
+        font-size: 18px;
+        font-family: "serif";
+        letter-spacing: 2px;
+      }
+
+      .contact-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .contact-info > h2{
+  font-size: 32px;
+  font-family: "Poppins";
+}
+.contact-info > p{
+  font-size: 18px;
+  font-family: "serif";
+}
+.contact-form {
+}
+.contact-privacy {
+}
+
     </style>
   </head>
   <body>
@@ -312,16 +387,21 @@
       <div>Language</div>
     </header>
 
-    <section class="header-block">
-      <h2 style="width: 60vw">Преобразите ваше жилое пространство</h2>
-      <p style="font-size: calc(1.5vh + 1vw); width: calc(10vh + 50vw)">
+    <section class="header-block" style="background-color: #0e0f10">
+      <h2 style="width: 60vw" class="hoist">
+        Преобразите ваше жилое пространство
+      </h2>
+      <p
+        style="font-size: calc(1.5vh + 1vw); width: calc(10vh + 50vw)"
+        class="hoist"
+      >
         Профессиональные услуги по укладке полов. Безграничные варианты для
         любой комнаты.
       </p>
-      <a class="button">Начать</a>
+      <a class="button hoist">Начать</a>
     </section>
-    <section>
-      <div>
+    <section style="background-color: #0e0f10">
+      <div class="hoist">
         <h2>Преобразите ваше пространство с ARDI в Кёльне</h2>
         <p>
           Улучшите ваш дом или офис с помощью высококачественных решений от
@@ -330,14 +410,24 @@
           потребностей в напольных покрытиях.
         </p>
       </div>
-      <div>
+      <div class="hoist">
         <img src="https://placehold.co/600x600" alt="1" />
       </div>
     </section>
-    <img src="assets/curve.svg" alt="" />
+    <svg
+      class="border"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+    >
+      <path
+        fill="#17191a"
+        fill-opacity="1"
+        d="M0,256L480,128L960,256L1440,128L1440,320L960,320L480,320L0,320Z"
+      ></path>
+    </svg>
     <section>
-      <h2>Наши услуги</h2>
-      <div class="services">
+      <h2 class="hoist">Наши услуги</h2>
+      <div class="services hoist">
         <div class="service">
           <img src="https://placehold.co/800x1000" alt="1" />
           <h2>Решения для жилых помещений</h2>
@@ -366,30 +456,30 @@
       </div>
     </section>
     <section>
-      <h2>О нас</h2>
-      <p>
+      <h2 class="hoist">О нас</h2>
+      <p class="hoist">
         Мы предлагаем широкий спектр услуг, включая установку, обслуживание и
         ремонт. С многолетним опытом мы обеспечиваем выполнение каждой работы на
         высшем уровне.
       </p>
     </section>
     <section class="gallery">
-      <div class="gallery-item">
+      <div class="gallery-item hoist">
         <img src="https://placehold.co/400x400/pink/black" alt="Image 1" />
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item hoist">
         <img src="https://placehold.co/400x400/purple/gray" alt="Image 2" />
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item hoist">
         <img src="https://placehold.co/400x400/black/pink" alt="Image 3" />
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item hoist">
         <img src="https://placehold.co/400x400/gray/purple" alt="Image 4" />
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item hoist">
         <img src="https://placehold.co/400x400/pink/pink" alt="Image 5" />
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item hoist">
         <img src="https://placehold.co/400x400/purple/purple" alt="Image 6" />
       </div>
     </section>
@@ -430,45 +520,124 @@
       <button class="next">&#10095;</button>
       <button class="close">&#10006;</button>
     </div>
-    <!-- <section class="map-section">
-      <div id="map"></div>
-      <img src="./assets/curve.svg" class="curve" alt="Curve" />
-      <div class="location-info">
-        <h3>Location</h3>
+    <section>
+      <button class="prev-btn">&lt;</button>
+      <div class="carousel-container">
+        <div class="cards">
+          <div class="carousel-card">
+            <img src="https://placehold.co/100x100/purple/gray" alt="Laura 3" />
+            <p>
+              ARDI transformed my floors beautifully! Their craftsmanship and
+              attention to detail are outstanding. The team was professional and
+              friendly. Highly recommend ARDI for anyone in Cologne needing
+              flooring services. Thank you, ARDI!
+            </p>
+            <p style="font-family: serif">- Laura</p>
+          </div>
+          <div class="carousel-card">
+            <img src="https://placehold.co/100x100/purple/gray" alt="Laura 1" />
+            <p>
+              ARDI transformed our home with stunning new floors! The quality
+              and craftsmanship are exceptional. The team was professional,
+              friendly, and efficient. Highly recommend ARDI for any flooring
+              needs. Thank you!
+            </p>
+            <p style="font-family: serif">- Laura</p>
+          </div>
+          <div class="carousel-card">
+            <img src="https://placehold.co/100x100/purple/gray" alt="Laura 2" />
+            <p>
+              ARDI прекрасно преобразили мои полы! Их мастерство и внимание к
+              деталям впечатляют. Команда была профессиональной и дружелюбной.
+              Настоятельно рекомендую ARDI всем, кто нуждается в услугах по
+              укладке полов. Спасибо, ARDI!
+            </p>
+            <p style="font-family: serif">- Laura</p>
+          </div>
+          <div class="carousel-card">
+            <img src="https://placehold.co/100x100/purple/gray" alt="Laura 3" />
+            <p>
+              ARDI transformed my floors beautifully! Their craftsmanship and
+              attention to detail are outstanding. The team was professional and
+              friendly. Highly recommend ARDI for anyone in Cologne needing
+              flooring services. Thank you, ARDI!
+            </p>
+            <p style="font-family: serif">- Laura</p>
+          </div>
+          <div class="carousel-card">
+            <img src="https://placehold.co/100x100/purple/gray" alt="Laura 1" />
+            <p>
+              ARDI transformed our home with stunning new floors! The quality
+              and craftsmanship are exceptional. The team was professional,
+              friendly, and efficient. Highly recommend ARDI for any flooring
+              needs. Thank you!
+            </p>
+            <p style="font-family: serif">- Laura</p>
+          </div>
+        </div>
+      </div>
+      <button class="next-btn">&gt;</button>
+    </section>
+
+    <section class="map-section">
+      <svg
+        class="border map-svg"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#17191a"
+          fill-opacity="1"
+          d="M0,256L480,128L960,256L1440,128L1440,320L960,320L480,320L0,320Z"
+        ></path>
+      </svg>
+      <div class="map-badge">
+        <h2>Location</h2>
         <p>Cologne, NW</p>
       </div>
-    </section> -->
+      <iframe
+        class="map-iframe"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d444.4601972714308!2d6.960270092482522!3d50.937653192114944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25219bc14235%3A0x20ffb0673d390f67!2sEuronet%20-%20Geldautomat%20-%20ATM!5e0!3m2!1sru!2sua!4v1720346219333!5m2!1sru!2sua"
+        width="1800"
+        height="600"
+        style="border: 0"
+        allowfullscreen
+        frameborder="0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+    <section class="contact-container">
+      <div class="hoist contact-info">
+        <h2> Contact Our Team </h2>
+       <br />
+       <p>        Fill out the form to get in touch with us. We are here to help with your
+        flooring needs.</p>
 
-    <section class="container row gray">
-      <div>
-        Contact Our Team <br />
-        Fill out the form to get in touch with us. We are here to help with your
-        flooring needs.
       </div>
-      <form action="" class="container column">
-        <div class="container row">
-          <div>Name</div>
-          <div>Email</div>
-          <div>Message</div>
+      <form action="" class="hoist">
+        <div class="contact-form">
+          <input>Name</input>
+          <input>Email</input>
+          <input>Message</input>
         </div>
-        <div>
-          <div>
+        <div class="contact-privacy">
+          <p>
             This site is protected by reCAPTCHA and the Google Privacy Policy
             and Terms of Service apply.
-          </div>
-          <button>Submit</button>
+          </p>
+          <a class="button">Submit</a>
         </div>
       </form>
     </section>
-    <section class="container column gray">
-      <div>Преобразите ваши полы сегодня</div>
-      <div>
+    <section>
+      <h2 class="hoist">Преобразите ваши полы сегодня</h2>
+      <p class="hoist">
         Улучшите ваше пространство с нашими экспертными услугами по укладке
         полов в Кёльне.
-      </div>
-      <button>Связаться с нами</button>
+      </p>
+      <a class="hoist button">Связаться с нами</a>
     </section>
-
     <footer>
       <div>
         <img class="logo invert" src="./assets/ARDI_logo.png" alt="" />
@@ -477,14 +646,5 @@
       <div>Language</div>
     </footer>
     <script src="./js/script.js"></script>
-    <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script>
-      var map = L.map("map").setView([50.9375, 6.9603], 13);
-
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
-    </script> -->
   </body>
 </html>
