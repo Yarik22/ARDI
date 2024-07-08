@@ -239,6 +239,9 @@ section:nth-child(3) > div > p {
     transform: translateY(100px);
   }
 }
+.border > path {
+  background: #17191a;
+}
 .services {
   display: flex;
   flex-wrap: wrap;
