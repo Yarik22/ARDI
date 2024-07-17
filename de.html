@@ -6,7 +6,7 @@
     <title>ARDI | Professionelle Bodenreparatur und -verlegung</title>
     <link rel="stylesheet" href="./styles/nullstyle.css" />
     <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="icon" href="./assets/ARDI_logo_inverted.png">
+    <link rel="icon" href="./assets/ARDI_logo_inverted.png" />
     <meta
       name="description"
       content="Wir bieten professionelle Dienstleistungen für die Reparatur und Verlegung von Böden an. Hohe Qualität, erschwingliche Preise, professioneller Ansatz. Erfahren Sie mehr und bestellen Sie jetzt unseren Service!"
@@ -57,10 +57,19 @@
         <img class="logo invert" src="./assets/ARDI_logo.png" alt="" />
         <h2 class="logo-text">ARDI</h2>
       </div>
-      <div>
-        Sprache
-        <a href="./index.html">en</a>
-      </div>
+      <div
+        class="language-picker js-language-picker"
+        data-trigger-class="li4-btn li4-btn--subtle js-tab-focus"
+      >
+        <form action="" class="language-picker__form">
+          <label for="language-picker-select">Select your language</label>
+
+          <select name="language-picker-select" id="language-picker-select">
+            <option lang="de" value="german" selected>Deutsch</option>
+            <option lang="en" value="english">English</option>
+            <option lang="ru" value="russian">Русский</option>
+          </select>
+        </form>
       </div>
     </header>
 
