@@ -567,7 +567,7 @@ label {
   background-color: #17191a;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-section:nth-child(11) {
+section:nth-child(12) {
   display: flex;
   flex-direction: column;
   justify-content: center;
