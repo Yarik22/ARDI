@@ -289,7 +289,6 @@ Util.getIndexInArray = function (array, el) {
     var svgs = picker.trigger.getElementsByTagName("svg");
     Util.addClass(svgs[0], "li4-icon");
     Util.addClass(svgs[1], "li4-icon");
-    // ⚠️ Important: you need to modify this function in production
     initLanguageSelection(picker);
 
     picker.trigger.addEventListener("click", function () {
