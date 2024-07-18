@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/OpenSans-Regular.ttf");
+  src: url("../fonts/OpenSans-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins-ext";
-  src: url("/fonts/Poppins-Medium.ttf");
+  src: url("../fonts/Poppins-Medium.ttf");
   font-weight: normal;
   font-style: normal;
 }
