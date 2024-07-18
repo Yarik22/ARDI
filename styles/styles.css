@@ -885,3 +885,9 @@ section:nth-child(12) {
   background-position: center;
   background-size: cover;
 }
+
+@-moz-document url-prefix() {
+  .map-iframe {
+    width: calc(99vw - 15px);
+  }
+}
