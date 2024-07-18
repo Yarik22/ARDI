@@ -384,6 +384,7 @@ footer > div {
 }
 
 .header-block {
+  background: url("../assets/header-bg.jpeg");
   width: 100%;
   position: static;
   top: 0;
