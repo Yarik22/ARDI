@@ -502,3 +502,23 @@ Util.getIndexInArray = function (array, el) {
     });
   }
 })();
+
+function copyToClipboard(text) {
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      showPopup("Copied to clipboard: " + text);
+    })
+    .catch((err) => {
+      console.error("Failed to copy text: ", err);
+    });
+}
+
+function showPopup(message) {
+  const popup = document.getElementById("popup");
+  popup.textContent = message;
+  popup.classList.add("show");
+  setTimeout(() => {
+    popup.classList.remove("show");
+  }, 2000);
+}

@@ -270,7 +270,8 @@ html {
 
 .carousel-card img {
   border-radius: 50%;
-  width: 80px;
+  width: 100px;
+  height: 100px;
 }
 .prev-btn,
 .next-btn {
@@ -346,7 +347,6 @@ header {
 footer {
   z-index: 10;
   user-select: none;
-  height: 96px;
   background: none;
   display: flex;
   justify-content: space-between;
@@ -354,7 +354,8 @@ footer {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  height: 18vh;
+  height: 21vh;
+  font-family: "Poppins-ext";
 }
 section {
   text-wrap: wrap;
@@ -383,6 +384,7 @@ footer > div {
 }
 
 .header-block {
+  background: url(/assets/header-bg.jpeg);
   width: 100%;
   position: static;
   top: 0;
@@ -396,13 +398,18 @@ footer > div {
   background-size: cover;
 }
 
-@media (min-width: 764px) {
+@media (min-width: 760px) {
   .button {
     width: calc(5vw + 5vh + 5%);
   }
 }
-
-@media (max-width: 764px) {
+@media (min-width: 760px) and ((max-width: 1200px)) {
+  .service img {
+    width: 30vw;
+    height: 20vh;
+  }
+}
+@media (max-width: 760px) {
   .header-block {
     padding: calc(15vh + 11vw) 10vw calc(4vh + 6vw) 10vw;
   }
@@ -471,6 +478,15 @@ section:nth-child(3) > div > p {
   max-width: 100%;
   border-radius: 5px;
 }
+@media (max-width: 500px) {
+  .service img {
+    width: 300px;
+    height: 150px;
+  }
+  section:nth-child(5) > h2 {
+    font-size: 10vw;
+  }
+}
 .service p {
   font-size: 18px;
   margin: 10px 0;
@@ -484,11 +500,19 @@ section > h2 {
   margin: 16px 0px;
   text-align: start;
 }
-@media (max-width: 764px) {
+@media (max-width: 1440px) {
+  .carousel-item img {
+    max-height: 600px;
+    max-width: 600px;
+    transform: translateX(120%);
+  }
+}
+@media (max-width: 760px) {
   .service {
     flex: 1 1 100%;
   }
   .carousel-item img {
+    max-height: 300px;
     max-width: 300px;
     transform: translateX(57.5%);
   }
@@ -505,6 +529,7 @@ section:nth-child(6) > p {
 }
 
 .gallery-item {
+  height: 400px;
   user-select: none;
   cursor: pointer;
   flex: 1 1 calc(33.333% - 20px);
@@ -512,7 +537,7 @@ section:nth-child(6) > p {
   transition: 0.25s;
 }
 .gallery-item:hover {
-  filter: brightness(1.2);
+  filter: brightness(0.8);
   transition: 0.25s;
 }
 .gallery-item img {
@@ -553,7 +578,8 @@ section:nth-child(6) > p {
 
 .carousel-item img {
   user-select: none;
-  width: 100%;
+  width: 600px;
+  height: 600px;
   display: block;
 }
 
@@ -652,7 +678,7 @@ section:nth-child(12) > a {
   padding: 18px;
   gap: 5px;
 }
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .carousel-item {
     width: 200px;
   }
@@ -761,7 +787,7 @@ a:focus {
 label {
   text-wrap: nowrap;
 }
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .contact-container {
     flex-direction: column;
     align-items: stretch;
@@ -787,4 +813,75 @@ section:nth-child(12) {
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+.service-img {
+  height: 400px;
+}
+
+.copy-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hint {
+  visibility: hidden;
+  width: 120px;
+  background-color: #18191b;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.hint::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.copy-container:hover .hint {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  visibility: hidden;
+  width: 200px;
+  background-color: #228777;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  position: fixed;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0s linear 0.3s;
+}
+
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.prefooter {
+  background-image: url("../assets/prefooter.jpeg");
+  background-position: center;
+  background-size: cover;
 }
