@@ -327,7 +327,7 @@
           вашими потребностями в напольных покрытиях в Германии.
         </p>
       </div>
-      <form action="" class="contact-form hoist">
+      <form action="" id="contact-form" class="contact-form hoist">
         <div class="contact-inputs">
           <label for="name">Имя</label>
           <input type="text" id="name" name="name" required />
@@ -337,7 +337,13 @@
         <label for="message">Сообщение</label>
         <textarea id="message" name="message" required></textarea>
         <div class="contact-privacy">
-          <a type="submit" class="button" style="width: 100%">Отправить</a>
+          <button
+            type="submit"
+            class="button"
+            style="width: 100%; color: white"
+          >
+            Отправить
+          </button>
         </div>
       </form>
     </section>
@@ -371,5 +377,6 @@
       </div>
     </footer>
     <script src="./js/script.js"></script>
+    <script src="./js/mail.js"></script>
   </body>
 </html>

@@ -352,7 +352,7 @@
           Ihren Bodenbedürfnissen in Deutschland zu helfen.
         </p>
       </div>
-      <form action="" class="contact-form hoist">
+      <form action="" id="contact-form" class="contact-form hoist">
         <div class="contact-inputs">
           <label for="name">Name </label>
           <input type="text" id="name" name="name" required />
@@ -362,7 +362,13 @@
         <label for="message">Nachricht</label>
         <textarea id="message" name="message" required></textarea>
         <div class="contact-privacy">
-          <a type="submit" class="button" style="width: 100%">Senden</a>
+          <button
+            type="submit"
+            class="button"
+            style="width: 100%; color: white"
+          >
+            Senden
+          </button>
         </div>
       </form>
     </section>
@@ -396,5 +402,6 @@
       </div>
     </footer>
     <script src="./js/script.js"></script>
+    <script src="./js/mail.js"></script>
   </body>
 </html>

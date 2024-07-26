@@ -439,11 +439,9 @@ Util.getIndexInArray = function (array, el) {
     let url = `./index.html`;
     if (option && option.lang) {
       if (option.lang === "en") {
-        console.log(url);
         return url;
       }
       url = `./${option.lang}.html`;
-      console.log(url);
       return url;
     } else {
       return null;
