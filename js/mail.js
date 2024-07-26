@@ -2,6 +2,7 @@ document
   .getElementById("contact-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
+
     var formData = new FormData(event.target);
     formData.append("access_key", "da720ba4-a2c1-4700-8767-b1ac748c50e");
     fetch("../api/mail.php", {
@@ -20,6 +21,7 @@ document
         console.error("An error occurred:", error);
       });
   });
+
 function showSubmitionPopup() {
   let message;
   const lang = document.documentElement.lang;
@@ -38,5 +40,20 @@ function showSubmitionPopup() {
         "Form submitted successfully! Thank you! We will get in touch with you shortly.";
   }
 
-  alert(message);
+  const popup = document.createElement("div");
+  popup.classList.add("popup");
+  popup.textContent = message;
+
+  document.body.appendChild(popup);
+
+  setTimeout(() => {
+    popup.classList.add("show");
+  }, 10);
+
+  setTimeout(() => {
+    popup.classList.remove("show");
+    setTimeout(() => {
+      popup.remove();
+    }, 300);
+  }, 3000);
 }
