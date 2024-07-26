@@ -507,16 +507,15 @@ function copyToClipboard(text) {
   navigator.clipboard
     .writeText(text)
     .then(() => {
-      showPopup("Copied to clipboard: " + text);
+      showPopup();
     })
     .catch((err) => {
       console.error("Failed to copy text: ", err);
     });
 }
 
-function showPopup(message) {
+function showPopup() {
   const popup = document.getElementById("popup");
-  popup.textContent = message;
   popup.classList.add("show");
   setTimeout(() => {
     popup.classList.remove("show");
