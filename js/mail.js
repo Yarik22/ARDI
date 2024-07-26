@@ -20,9 +20,23 @@ document
         console.error("An error occurred:", error);
       });
   });
-
 function showSubmitionPopup() {
-  alert(
-    "Форму успішно надіслано! Дякуємо! Протягом найближчого часу ми звʼяжемось з Вами."
-  );
+  let message;
+  const lang = document.documentElement.lang;
+
+  switch (lang) {
+    case "ru":
+      message =
+        "Форму успешно отправлено! Спасибо! В ближайшее время мы свяжемся с вами.";
+      break;
+    case "de":
+      message =
+        "Das Formular wurde erfolgreich gesendet! Vielen Dank! Wir werden uns in Kürze mit Ihnen in Verbindung setzen.";
+      break;
+    default:
+      message =
+        "Form submitted successfully! Thank you! We will get in touch with you shortly.";
+  }
+
+  alert(message);
 }
