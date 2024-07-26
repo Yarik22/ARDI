@@ -11,7 +11,7 @@ document
       .then((response) => response.text())
       .then((data) => {
         if (data === "success") {
-          showPopup();
+          showSubmitionPopup();
         } else {
           console.error("Error sending form!");
         }
@@ -21,7 +21,7 @@ document
       });
   });
 
-function showPopup() {
+function showSubmitionPopup() {
   alert(
     "Форму успішно надіслано! Дякуємо! Протягом найближчого часу ми звʼяжемось з Вами."
   );
